@@ -5,18 +5,21 @@
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-    "db:push": "",
-    "db:studio": "",
+    "dev": "docker compose up --build -d",
+    "db:push": "drizzle-kit push:pg",
+    "db:studio": "drizzle-kit studio --port 5555",
     "db:drop": "",
-    "db:migrate": "",
+    "db:migrate": "drizzle-kit generate:pg",
     "db:introspect": ""
   },
   "dependencies": {
     "@mydrive/tsconfig": "workspace:*",
-    "dotenv": "^16.3.1",
     "drizzle-kit": "^0.20.6",
     "drizzle-orm": "^0.29.1",
     "nanoid": "^5.0.3",
     "postgres": "^3.4.3"
+  },
+  "devDependencies": {
+    "pg": "^8.11.3"
   }
 }

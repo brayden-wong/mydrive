@@ -15,10 +15,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { login } from "../_actions/login";
+import { signIn } from "../_actions/sign-in";
 
 const SignInSchema = z.object({
-  email: z.string().email(),
+  username: z.string(),
   password: z.string().min(8),
 });
 
@@ -26,7 +26,7 @@ const SignInForm = () => {
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
-      email: "",
+      username: "",
       password: "",
     },
   });
@@ -38,10 +38,10 @@ const SignInForm = () => {
       <form className="flex flex-col items-start justify-center gap-y-2">
         <FormField
           control={form.control}
-          name="email"
+          name="username"
           render={({ field }) => (
             <FormItem className="w-full space-y-0.5">
-              <FormLabel>Email</FormLabel>
+              <FormLabel>Username</FormLabel>
               <FormControl>
                 <Input
                   {...field}
@@ -81,7 +81,7 @@ const SignInForm = () => {
           )}
         />
         <div className="flex w-full items-center justify-start gap-x-2">
-          <Button className="w-32" type="submit" formAction={login}>
+          <Button className="w-32" type="submit" formAction={signIn}>
             <span>Sign In</span>
           </Button>
           <Link href="/sign-up" className="group text-sm font-medium">

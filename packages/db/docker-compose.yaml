@@ -7,5 +7,13 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
+      POSTGRES_ROOT_PASSWORD: postgres
+      POSTGRES_ROOT_USER: postgres
+    volumes:
+      - my_drive:/var/lib/postgresql/data
     ports:
       - 5432:5432
+
+volumes:
+  my_drive:
+    external: false

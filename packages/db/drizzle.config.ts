@@ -5,7 +5,7 @@ config({ path: "./.env" });
 
 export default {
   driver: "pg",
-  schema: "./src/schema",
+  schema: "./src/schema.ts",
   dbCredentials: {
     host: process.env.DATABASE_HOST,
     port: process.env.DATABASE_PORT,

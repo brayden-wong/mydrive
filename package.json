@@ -8,6 +8,7 @@
     "build": "turbo build --parallel"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "turbo": "^1.10.16"
   },
   "workspaces": [
