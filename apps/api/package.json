@@ -1,0 +1,21 @@
+{
+  "name": "@mydrive/api",
+  "version": "0.0.1",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^0.7.2",
+    "@elysiajs/jwt": "^0.7.0",
+    "@mydrive/db": "workspace:*",
+    "drizzle-orm": "^0.29.1",
+    "elysia": "latest",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "module": "src/index.js"
+}
